@@ -6,12 +6,12 @@
     <title>Gym Website</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
-      /* General Reset */
       * {
         margin: 0;
         padding: 0;
@@ -19,13 +19,12 @@
       }
 
       body {
-        font-family: poppins;
+        font-family: 'Poppins', sans-serif;
         line-height: 1.6;
         color: black;
         width: auto;
       }
 
-      /* Navigation Bar */
       nav {
         display: flex;
         justify-content: space-between;
@@ -33,12 +32,22 @@
         padding: 1rem 2rem;
         background-color: black;
         color: white;
+        flex-wrap: wrap;
       }
 
-      nav .logo {
+      .logo {
         font-size: 1.5rem;
         font-weight: bold;
         text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .logo img {
+        height: 30px;
+        width: 30px;
+        border-radius: 10px;
       }
 
       nav ul {
@@ -62,7 +71,6 @@
         color: rgb(234, 167, 43);
       }
 
-      /* Dropdown Menu */
       nav ul li ul {
         position: absolute;
         top: 100%;
@@ -92,7 +100,15 @@
         background-color: rgb(197, 195, 191);
       }
 
-      /* Hero Section */
+      .menu-toggle {
+        display: none;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: white;
+        cursor: pointer;
+      }
+
       .container {
         display: flex;
         align-items: center;
@@ -100,6 +116,7 @@
         padding: 2rem;
         background-color: rgb(135, 129, 129);
         width: 100%;
+        flex-wrap: wrap;
       }
 
       .container .text {
@@ -139,6 +156,10 @@
         margin-top: 5px;
       }
 
+      .image img {
+        margin-left: 25%;
+      }
+
       footer {
         background-color: black;
         color: white;
@@ -156,14 +177,6 @@
       .footer-column {
         flex: 1;
         min-width: 250px;
-      }
-      .logo img {
-        height: 20px;
-        width: 30px;
-        border-radius: 10px;
-      }
-      .image img {
-        margin-left: 25%;
       }
 
       .footer-column h3 {
@@ -210,13 +223,27 @@
       }
 
       @media (max-width: 768px) {
+        .menu-toggle {
+          display: block;
+        }
+
+        nav {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
         nav ul {
           flex-direction: column;
           display: none;
+          width: 100%;
         }
 
         nav ul.active {
           display: flex;
+        }
+
+        nav ul li {
+          width: 100%;
         }
 
         .container {
@@ -229,9 +256,14 @@
           max-width: 100%;
         }
 
+        .container .image img {
+          margin-left: 0;
+        }
+
         .footer-container {
           flex-direction: column;
           align-items: center;
+          text-align: center;
         }
       }
     </style>
@@ -242,6 +274,7 @@
         <img src="fitness club.webp" alt="" /><span>Haleema</span> fitness
         <span>club</span>
       </div>
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <ul>
         <li><a href="#home">Home</a></li>
         <li>
@@ -268,7 +301,6 @@
             <li><a href="benigits.html">Benefits</a></li>
           </ul>
         </li>
-        <!-- <li><a href="#contact">Contact Us</a></li> -->
         <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
@@ -277,15 +309,12 @@
       <div class="text">
         <h1><b>FITNESS CLUB</b></h1>
         <p>
-          Welcome to [Haleema Fitness Club], where your fitness journey begins!
+          Welcome to Haleema Fitness Club, where your fitness journey begins!
           We are committed to helping you achieve your health and wellness goals
           in a supportive and energizing environment. Whether you're a beginner
           looking to start a healthier lifestyle or a seasoned athlete seeking
           to push your limits, our state-of-the-art equipment, diverse classes,
-          and certified trainers are here to guide you every step of the way. At
-          [Your Gym Name], we believe in more than just fitness – we believe in
-          building a strong, vibrant community. Join us today and discover a
-          space where you can transform your body, mind, and spirit.
+          and certified trainers are here to guide you every step of the way.
         </p>
         <a href="f.html">
           <button>Join Now</button>
@@ -295,6 +324,7 @@
         <img src="yoga2.jpg" alt="image" />
       </div>
     </div>
+
     <footer>
       <div class="footer-container">
         <div class="footer-column">
@@ -309,8 +339,8 @@
           <h3>Quick Links</h3>
           <ul>
             <li><a href="history.html">Our History</a></li>
-            <li><a href="traning.html">Tarining Programs</a></li>
-            <li><a href="plans">Plans</a></li>
+            <li><a href="traning.html">Training Programs</a></li>
+            <li><a href="plans.html">Plans</a></li>
             <li><a href="https://www.Facebook.com">Contact Us</a></li>
             <li><a href="faq.html">FAQ</a></li>
           </ul>
@@ -324,15 +354,9 @@
         <div class="footer-column">
           <h3>Follow Us</h3>
           <div class="social-icons">
-            <a href="https://www.Facebook.com"
-              ><img src="fb.png" alt="Facebook" />
-            </a>
-            <a href="https://www.Instagram.com"
-              ><img src="insta.jpeg" alt="Instagram"
-            /></a>
-            <a href="https://www.WhatsApp.com"
-              ><img src="whatsaapp.jpeg" alt="WhatsApp"
-            /></a>
+            <a href="https://www.Facebook.com"><img src="fb.png" alt="Facebook" /></a>
+            <a href="https://www.Instagram.com"><img src="insta.jpeg" alt="Instagram" /></a>
+            <a href="https://www.WhatsApp.com"><img src="whatsaapp.jpeg" alt="WhatsApp" /></a>
           </div>
         </div>
       </div>
@@ -341,6 +365,11 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+      function toggleMenu() {
+        const navUl = document.querySelector("nav ul");
+        navUl.classList.toggle("active");
+      }
+    </script>
   </body>
 </html>
