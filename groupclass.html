@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Group Classes - JYM</title>
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* Header */
+      .header {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        font-size: 2rem;
+      }
+
+      /* Intro Section */
+      .intro {
+        background: #f4f4f4;
+        text-align: center;
+        padding: 2rem 1rem;
+      }
+
+      .intro h2 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .intro p {
+        font-size: 1.2rem;
+        color: #555;
+      }
+
+      /* Classes Section */
+      .classes {
+        padding: 2rem 1rem;
+        background: #fff;
+      }
+
+      .classes h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .class-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .class-card {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        text-align: center;
+        padding: 1rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+      }
+
+      .class-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        background-color: #fef6f6;
+      }
+
+      .class-card h3 {
+        color: #f04;
+        margin-bottom: 0.5rem;
+        transition: color 0.3s;
+      }
+
+      .class-card:hover h3 {
+        color: #c02;
+      }
+
+      .class-card p {
+        color: #555;
+        transition: color 0.3s;
+      }
+
+      .class-card:hover p {
+        color: #333;
+      }
+
+      /* Footer */
+      .footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo">Group Classes at JYM</h1>
+    </header>
+
+    <section class="intro">
+      <div class="container">
+        <h2>Fun & Motivating Group Workouts</h2>
+        <p>
+          Join our vibrant group classes and reach your fitness goals together!
+        </p>
+      </div>
+    </section>
+
+    <section class="classes">
+      <div class="container">
+        <h2>Our Group Classes</h2>
+        <div class="class-cards">
+          <div class="class-card">
+            <h3>HIIT</h3>
+            <p>
+              High-Intensity Interval Training to burn calories and build
+              endurance.
+            </p>
+          </div>
+          <div class="class-card">
+            <h3>Yoga</h3>
+            <p>Relax, unwind, and improve flexibility in our yoga sessions.</p>
+          </div>
+          <div class="class-card">
+            <h3>Zumba</h3>
+            <p>Dance your way to fitness with our energetic Zumba classes.</p>
+          </div>
+          <div class="class-card">
+            <h3>Spinning</h3>
+            <p>
+              Pedal your way to strength and stamina in our cycling classes.
+            </p>
+          </div>
+          <div class="class-card">
+            <h3>Body Pump</h3>
+            <p>Strengthen and tone with light weights and high repetitions.</p>
+          </div>
+          <div class="class-card">
+            <h3>Pilates</h3>
+            <p>Core-focused exercises for balance, strength, and posture.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2024 JYM. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Training Programs</title>
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+      }
+
+      /* Header */
+      .header {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: url("gym-hero.jpg") no-repeat center center/cover;
+        color: #fff;
+        text-align: center;
+        padding: 3rem 2rem;
+      }
+
+      .hero-text h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero-text p {
+        margin: 1rem 0;
+      }
+
+      /* Programs Section */
+      .programs-section {
+        background: #f9f9f9;
+        padding: 2rem 0;
+      }
+
+      .programs-section h2 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+      }
+
+      .program-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .card {
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 1rem;
+        text-align: center;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .card h3 {
+        color: #f04;
+        margin-bottom: 0.5rem;
+      }
+      h3 :hover{
+        
+      } 
+
+      /* Footer */
+      .footer {
+        background: #222;
+        color: #fff;
+        text-align: center;
+        padding: 1rem 0;
+      }
+    </style>
+    <!-- script -->
+    <script>
+      // Smooth scrolling to sections
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          document.querySelector(targetId).scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+        <header class="header">
+          <h1 class="logo">JYM Training Programs</h1>
+        </header>
+
+        <section class="hero">
+          <div class="hero-text">
+            <h2>Achieve Your Fitness Goals</h2>
+            <p>
+              Join our specialized training programs and transform your life.
+            </p>
+          </div>
+        </section>
+
+        <section id="programs" class="programs-section">
+          <div class="container">
+            <h2>Our Programs</h2>
+            <div class="program-cards">
+              <div class="card">
+                <h3>Strength Training</h3>
+                <p>
+                  Build muscle and increase your strength with our tailored
+                  programs.
+                </p>
+              </div>
+              <div class="card">
+                <h3>Cardio Fitness</h3>
+                <p>
+                  Boost endurance and burn calories with our high-energy cardio
+                  workouts.
+                </p>
+              </div>
+              <div class="card">
+                <h3>Yoga & Flexibility</h3>
+                <p>
+                  Enhance flexibility and relax your mind with our yoga
+                  sessions.
+                </p>
+              </div>
+              <div class="card">
+                <h3>Personal Coaching</h3>
+                <p>Get one-on-one training with our expert coaches.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer class="footer">
+          <p>&copy; 2024 JYM. All rights reserved.</p>
+        </footer>
+      </body>
+    </html>

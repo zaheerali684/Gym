@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ | Your Gym</title>
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        color: #333;
+        background-color: #f9f9f9;
+      }
+
+      h1 {
+        color: #4caf50;
+      }
+
+      /* Header */
+      .header {
+        background: #4caf50;
+        color: white;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      /* FAQ Section */
+      .faq-section {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+
+      .faq-item {
+        margin-bottom: 1.5rem;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        background: white;
+      }
+
+      .faq-question {
+        width: 100%;
+        text-align: left;
+        padding: 1rem;
+        border: none;
+        background: #f4f4f4;
+        font-size: 1rem;
+        font-weight: bold;
+        color: #333;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .faq-question:hover {
+        background: #e8e8e8;
+      }
+
+      .faq-answer {
+        display: none;
+        padding: 1rem;
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.5;
+        border-top: 1px solid #ddd;
+      }
+
+      .arrow {
+        font-size: 1.2rem;
+        transition: transform 0.3s ease;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 1rem;
+        background: #333;
+        color: white;
+        text-align: center;
+      }
+    </style>
+    <!-- java script -->
+    <script>
+      // Select all FAQ questions
+      const faqQuestions = document.querySelectorAll(".faq-question");
+
+      faqQuestions.forEach((question) => {
+        question.addEventListener("click", () => {
+          // Toggle the active class on the clicked question
+          const answer = question.nextElementSibling;
+          const arrow = question.querySelector(".arrow");
+
+          if (answer.style.display === "block") {
+            answer.style.display = "none";
+            arrow.textContent = "+";
+          } else {
+            answer.style.display = "block";
+            arrow.textContent = "-";
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Frequently Asked Questions</h1>
+      <p>Find answers to common questions about our gym and services.</p>
+    </header>
+
+    <main>
+      <section class="faq-section">
+        <div class="faq-item">
+          <button class="faq-question">
+            What are your operating hours?
+            <span class="arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              We are open from 5:00 AM to 10:00 PM on weekdays and 7:00 AM to
+              8:00 PM on weekends.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do you offer personal training services?
+            <span class="arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Yes, we offer personal training sessions with certified trainers.
+              You can book sessions via our website or at the reception desk.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Are there any membership discounts?
+            <span class="arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              We offer discounts for students, seniors, and corporate
+              memberships. Contact us for more details!
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Do I need to bring my own towel?
+            <span class="arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              We recommend bringing your own towel, but we also provide towels
+              for rent at a small fee.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Is there parking available?
+            <span class="arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, we offer free parking for all members and visitors.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 Your Gym Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

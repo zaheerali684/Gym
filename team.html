@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meet Our Team</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url("https://as1.ftcdn.net/v2/jpg/02/49/73/32/1000_F_249733275_cPoGXWcE8TpXhyQBwAVOizNcOBEt0wWT.jpg")
+          no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+      }
+      .team-section {
+        padding: 50px 20px;
+        background: rgba(0, 0, 0, 0.8);
+        text-align: center;
+      }
+      .team-section h1 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+      }
+      .team-section p {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .team-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        justify-items: center;
+      }
+      .team-card {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        max-width: 300px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+      }
+      .team-card:hover {
+        transform: scale(1.05);
+      }
+      .team-card img {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 15px;
+        border: 3px solid white;
+      }
+      .team-card h3 {
+        margin: 10px 0 5px;
+        font-size: 1.5rem;
+      }
+      .team-card h4 {
+        margin: 5px 0 10px;
+        font-size: 1.1rem;
+        color: #ddd;
+      }
+      .team-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="team-section">
+      <h1>Meet Our Team</h1>
+      <p>
+        Our team of dedicated fitness professionals is here to help you achieve
+        your health and wellness goals.
+      </p>
+      <div class="team-container">
+        <!-- Team Member 1 -->
+        <div class="team-card">
+          <img src="mem1.webp" alt="Team Member 1" />
+          <h3>John Smith</h3>
+          <h4>Head Trainer</h4>
+          <p>
+            With over 10 years of experience, John specializes in strength
+            training and athletic performance.
+          </p>
+        </div>
+        <!-- Team Member 2 -->
+        <div class="team-card">
+          <img src="mem2.avif" alt="Team Member 2" />
+          <h3>Jane Doe</h3>
+          <h4>Yoga Instructor</h4>
+          <p>
+            Jane brings a calm and focused approach to yoga, helping clients
+            improve flexibility and mental clarity.
+          </p>
+        </div>
+        <!-- Team Member 3 -->
+        <div class="team-card">
+          <img src="mem3.png" alt="Team Member 3" />
+          <h3>Michael Lee</h3>
+          <h4>Nutrition Specialist</h4>
+          <p>
+            Michael offers personalized meal plans and nutritional advice to
+            complement your training.
+          </p>
+        </div>
+        <!-- Team Member 4 -->
+        <div class="team-card">
+          <img src="mem4.jpg" alt="Team Member 4" />
+          <h3>Sarah Johnson</h3>
+          <h4>Group Fitness Coach</h4>
+          <p>
+            Sarah's energy and expertise make group fitness sessions fun,
+            engaging, and effective.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

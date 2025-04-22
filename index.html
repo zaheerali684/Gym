@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gym Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: poppins;
+        line-height: 1.6;
+        color: black;
+        width: auto;
+      }
+
+      /* Navigation Bar */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: black;
+        color: white;
+      }
+
+      nav .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+      }
+
+      nav ul li {
+        position: relative;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: white;
+        padding: 0.5rem 1rem;
+        transition: color 0.3s;
+      }
+
+      nav ul li a:hover {
+        color: rgb(234, 167, 43);
+      }
+
+      /* Dropdown Menu */
+      nav ul li ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: black;
+        padding: 0.5rem 0;
+        display: none;
+        flex-direction: column;
+        border-radius: 5px;
+      }
+
+      nav ul li:hover ul {
+        display: flex;
+      }
+
+      nav ul li ul li {
+        width: 200px;
+      }
+
+      nav ul li ul li a {
+        padding: 0.5rem 1rem;
+        color: rgba(244, 172, 39, 0.695);
+        display: block;
+      }
+
+      nav ul li ul li a:hover {
+        background-color: rgb(197, 195, 191);
+      }
+
+      /* Hero Section */
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        background-color: rgb(135, 129, 129);
+        width: 100%;
+      }
+
+      .container .text {
+        max-width: 50%;
+      }
+
+      .container h1 {
+        font-size: 2.5rem;
+        color: black;
+        margin-bottom: 1rem;
+      }
+
+      .container p {
+        font-size: 1rem;
+        color: rgb(83, 80, 80);
+        margin-bottom: 1.5rem;
+      }
+
+      .container button {
+        background-color: rgb(243, 193, 98);
+        color: white;
+        border: none;
+        padding: 0.7rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .container button:hover {
+        background-color: rgb(243, 58, 58);
+      }
+
+      .container .image img {
+        max-width: 100%;
+        border-radius: 10px;
+        margin-top: 5px;
+      }
+
+      footer {
+        background-color: black;
+        color: white;
+        padding: 2rem 0;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 0 2rem;
+      }
+
+      .footer-column {
+        flex: 1;
+        min-width: 250px;
+      }
+      .logo img {
+        height: 20px;
+        width: 30px;
+        border-radius: 10px;
+      }
+      .image img {
+        margin-left: 25%;
+      }
+
+      .footer-column h3 {
+        margin-bottom: 1rem;
+        font-size: 1.2rem;
+        color: rgb(243, 193, 98);
+      }
+
+      .footer-column p,
+      .footer-column ul,
+      .footer-column li {
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li a {
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      .footer-column ul li a:hover {
+        color: rgb(243, 193, 98);
+      }
+
+      .social-icons a img {
+        width: 30px;
+        height: 30px;
+        margin-right: 0.5rem;
+        transition: transform 0.3s;
+      }
+
+      .social-icons a img:hover {
+        transform: scale(1.1);
+      }
+
+      .footer-bottom {
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+          display: none;
+        }
+
+        nav ul.active {
+          display: flex;
+        }
+
+        .container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .container .text,
+        .container .image {
+          max-width: 100%;
+        }
+
+        .footer-container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="fitness club.webp" alt="" /><span>Haleema</span> fitness
+        <span>club</span>
+      </div>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li>
+          <a href="#about">About Us</a>
+          <ul>
+            <li><a href="history.html">Gym History</a></li>
+            <li><a href="team.html">Team Profiles</a></li>
+            <li><a href="certificates.html">Certifications</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#services">Services</a>
+          <ul>
+            <li><a href="traning.html">Training Programs</a></li>
+            <li><a href="groupclass.html">Group Classes</a></li>
+            <li><a href="personal.html">Personal Training</a></li>
+          </ul>
+        </li>
+        <li>
+          <a href="#membership">Membership</a>
+          <ul>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="plans.html">Plans</a></li>
+            <li><a href="benigits.html">Benefits</a></li>
+          </ul>
+        </li>
+        <!-- <li><a href="#contact">Contact Us</a></li> -->
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <div class="text">
+        <h1><b>FITNESS CLUB</b></h1>
+        <p>
+          Welcome to [Haleema Fitness Club], where your fitness journey begins!
+          We are committed to helping you achieve your health and wellness goals
+          in a supportive and energizing environment. Whether you're a beginner
+          looking to start a healthier lifestyle or a seasoned athlete seeking
+          to push your limits, our state-of-the-art equipment, diverse classes,
+          and certified trainers are here to guide you every step of the way. At
+          [Your Gym Name], we believe in more than just fitness – we believe in
+          building a strong, vibrant community. Join us today and discover a
+          space where you can transform your body, mind, and spirit.
+        </p>
+        <a href="f.html">
+          <button>Join Now</button>
+        </a>
+      </div>
+      <div class="image">
+        <img src="yoga2.jpg" alt="image" />
+      </div>
+    </div>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>About Gym Name</h3>
+          <p>
+            Your fitness journey begins here! We are dedicated to helping you
+            achieve your goals with our expert training programs and world-class
+            facilities.
+          </p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="history.html">Our History</a></li>
+            <li><a href="traning.html">Tarining Programs</a></li>
+            <li><a href="plans">Plans</a></li>
+            <li><a href="https://www.Facebook.com">Contact Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Join Now</h3>
+          <p>Haleema Fitness Club, Jhelum</p>
+          <p>za4800424@gmail.com</p>
+          <p>Phone: 03369334198</p>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.Facebook.com"
+              ><img src="fb.png" alt="Facebook" />
+            </a>
+            <a href="https://www.Instagram.com"
+              ><img src="insta.jpeg" alt="Instagram"
+            /></a>
+            <a href="https://www.WhatsApp.com"
+              ><img src="whatsaapp.jpeg" alt="WhatsApp"
+            /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Haleema Fitness Club. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membership Plans | Your Gym</title>
+    <style>
+      /* General Styles */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f4f4f4;
+        text-align: center;
+      }
+
+      h1,
+      h2 {
+        color: black;
+      }
+
+      /* Header */
+      .header {
+        background: black;
+        color: white;
+        padding: 2rem 1rem;
+      }
+
+      /* Plans Section */
+      .plans {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 2rem;
+        gap: 2rem;
+      }
+
+      .plan-card {
+        background: white;
+        border: 1px solid whitesmoke;
+        border-radius: 8px;
+        padding: 1.5rem;
+        width: 300px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .plan-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .plan-card h2 {
+        margin-top: 0;
+      }
+
+      .plan-card .price {
+        font-size: 1.5rem;
+        color: black;
+        margin: 1rem 0;
+      }
+
+      .plan-card .benefits {
+        list-style-type: none;
+        padding: 0;
+        margin: 1rem 0;
+        text-align: left;
+      }
+
+      .plan-card .benefits li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid whitesmoke;
+      }
+
+      .plan-card .benefits li:last-child {
+        border: none;
+      }
+
+      .plan-card button {
+        background: black;
+        color: white;
+        border: none;
+        padding: 0.8rem;
+        width: 100%;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+
+      .plan-card button:hover {
+        background: greenyellow;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 1rem;
+        background: black;
+        color: white;
+      }
+    </style>
+    <!-- java script -->
+    <script>
+      // Function to handle plan selection
+      function selectPlan(planName, price) {
+        alert(
+          `You have selected the ${planName} for $${price}/month. Thank you for choosing us!`
+        );
+      }
+    </script>
+  </head>
+  <body>
+    <header class="header">
+      <h1>Membership Plans</h1>
+      <p>Find the perfect plan for your fitness journey.</p>
+    </header>
+
+    <main>
+      <section class="plans">
+        <!-- Basic Plan -->
+        <div class="plan-card" id="basic-plan">
+          <h2>Basic Plan</h2>
+          <p class="price">$15/month</p>
+          <ul class="benefits">
+            <li>Access to gym equipment</li>
+            <li>2 group classes per month</li>
+            <li>Locker access</li>
+          </ul>
+          <button class="select-plan" onclick="selectPlan('Basic Plan', 15)">
+            Select Plan
+          </button>
+        </div>
+
+        <!-- Standard Plan -->
+        <div class="plan-card" id="standard-plan">
+          <h2>Standard Plan</h2>
+          <p class="price">$30/month</p>
+          <ul class="benefits">
+            <li>Access to gym equipment</li>
+            <li>8 group classes per month</li>
+            <li>Locker + sauna access</li>
+          </ul>
+          <button class="select-plan" onclick="selectPlan('Standard Plan', 30)">
+            Select Plan
+          </button>
+        </div>
+
+        <!-- Premium Plan -->
+        <div class="plan-card" id="premium-plan">
+          <h2>Premium Plan</h2>
+          <p class="price">$50/month</p>
+          <ul class="benefits">
+            <li>Access to gym equipment</li>
+            <li>Unlimited group classes</li>
+            <li>Locker, sauna, and pool access</li>
+            <li>Monthly personal training session</li>
+          </ul>
+          <button class="select-plan" onclick="selectPlan('Premium Plan', 50)">
+            Select Plan
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2024 Your Gym Name. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
