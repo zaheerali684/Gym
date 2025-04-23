@@ -127,18 +127,7 @@
 
       .text {
         max-width: 50%;
-        animation: slideFade 4s infinite alternate;
-      }
-
-      @keyframes slideFade {
-        0% {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        100% {
-          opacity: 1;
-          transform: translateY(0px);
-        }
+        display: block;
       }
 
       .container h1 {
@@ -151,6 +140,7 @@
         font-size: 1rem;
         color: rgb(83, 80, 80);
         margin-bottom: 1.5rem;
+        display: block;
       }
 
       .container button {
@@ -173,16 +163,6 @@
         border-radius: 10px;
         margin-top: 5px;
         margin-left: 25%;
-        animation: bounce 3s infinite;
-      }
-
-      @keyframes bounce {
-        0%, 100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-10px);
-        }
       }
 
       footer {
@@ -234,7 +214,7 @@
         width: 30px;
         height: 30px;
         margin-right: 0.5rem;
-        transition: transform 0.3s;
+        transition: transform 0.1s;
       }
 
       .social-icons a img:hover {
@@ -339,14 +319,7 @@
     <div class="container">
       <div class="text">
         <h1><b>FITNESS CLUB</b></h1>
-        <p>
-          Welcome to Haleema Fitness Club, where your fitness journey begins!
-          We are committed to helping you achieve your health and wellness goals
-          in a supportive and energizing environment. Whether you're a beginner
-          looking to start a healthier lifestyle or a seasoned athlete seeking
-          to push your limits, our state-of-the-art equipment, diverse classes,
-          and certified trainers are here to guide you every step of the way.
-        </p>
+        <p id="slideshow">Welcome to Haleema Fitness Club! Get ready to kickstart your fitness journey!</p>
         <a href="f.html">
           <button>Join Now</button>
         </a>
@@ -401,6 +374,22 @@
         const navLinks = document.getElementById("navLinks");
         navLinks.classList.toggle("active");
       }
+
+      // Slideshow functionality
+      let slideIndex = 0;
+      const texts = [
+        "Welcome to Haleema Fitness Club, where your fitness journey begins!",
+        "Join our state-of-the-art fitness center and achieve your health goals.",
+        "We offer personalized training programs and group classes for all levels.",
+        "Become a part of the Haleema Fitness family today!"
+      ];
+
+      function changeText() {
+        document.getElementById("slideshow").textContent = texts[slideIndex];
+        slideIndex = (slideIndex + 1) % texts.length;
+      }
+
+      setInterval(changeText, 3000);  // Change text every 3 seconds
     </script>
   </body>
 </html>
