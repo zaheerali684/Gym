@@ -26,9 +26,6 @@
       }
 
       nav {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -53,28 +50,33 @@
         border-radius: 10px;
       }
 
-      nav ul {
+      .nav-links {
+        display: flex;
+      }
+
+      .nav-links ul {
         list-style: none;
         display: flex;
         gap: 1rem;
+        flex-wrap: wrap;
       }
 
-      nav ul li {
+      .nav-links ul li {
         position: relative;
       }
 
-      nav ul li a {
+      .nav-links ul li a {
         text-decoration: none;
         color: white;
         padding: 0.5rem 1rem;
         transition: color 0.3s;
       }
 
-      nav ul li a:hover {
+      .nav-links ul li a:hover {
         color: rgb(234, 167, 43);
       }
 
-      nav ul li ul {
+      .nav-links ul li ul {
         position: absolute;
         top: 100%;
         left: 0;
@@ -83,23 +85,24 @@
         display: none;
         flex-direction: column;
         border-radius: 5px;
+        z-index: 999;
       }
 
-      nav ul li:hover ul {
+      .nav-links ul li:hover ul {
         display: flex;
       }
 
-      nav ul li ul li {
+      .nav-links ul li ul li {
         width: 200px;
       }
 
-      nav ul li ul li a {
+      .nav-links ul li ul li a {
         padding: 0.5rem 1rem;
         color: rgba(244, 172, 39, 0.695);
         display: block;
       }
 
-      nav ul li ul li a:hover {
+      .nav-links ul li ul li a:hover {
         background-color: rgb(197, 195, 191);
       }
 
@@ -122,8 +125,20 @@
         flex-wrap: wrap;
       }
 
-      .container .text {
+      .text {
         max-width: 50%;
+        animation: slideFade 4s infinite alternate;
+      }
+
+      @keyframes slideFade {
+        0% {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
       }
 
       .container h1 {
@@ -136,8 +151,6 @@
         font-size: 1rem;
         color: rgb(83, 80, 80);
         margin-bottom: 1.5rem;
-        min-height: 80px;
-        transition: opacity 0.5s;
       }
 
       .container button {
@@ -155,21 +168,21 @@
         background-color: rgb(243, 58, 58);
       }
 
-      .container .image img {
+      .image img {
         max-width: 100%;
         border-radius: 10px;
         margin-top: 5px;
-        animation: float 3s ease-in-out infinite;
-      }
-
-      .image img {
         margin-left: 25%;
+        animation: bounce 3s infinite;
       }
 
-      @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
+      @keyframes bounce {
+        0%, 100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
       }
 
       footer {
@@ -239,23 +252,27 @@
           display: block;
         }
 
-        nav {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        nav ul {
-          flex-direction: column;
+        .nav-links {
           display: none;
           width: 100%;
         }
 
-        nav ul.active {
+        .nav-links.active {
           display: flex;
+          flex-direction: column;
         }
 
-        nav ul li {
+        .nav-links ul {
+          flex-direction: column;
           width: 100%;
+        }
+
+        .nav-links ul li {
+          width: 100%;
+        }
+
+        .nav-links ul li ul {
+          position: static;
         }
 
         .container {
@@ -263,12 +280,12 @@
           text-align: center;
         }
 
-        .container .text,
-        .container .image {
+        .text,
+        .image {
           max-width: 100%;
         }
 
-        .container .image img {
+        .image img {
           margin-left: 0;
         }
 
@@ -283,44 +300,52 @@
   <body>
     <nav>
       <div class="logo">
-        <img src="fitness club.webp" alt="" /><span>Haleema</span> fitness <span>club</span>
+        <img src="fitness club.webp" alt="" /><span>Haleema</span> fitness
+        <span>club</span>
       </div>
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li>
-          <a href="#about">About Us</a>
-          <ul>
-            <li><a href="history.html">Gym History</a></li>
-            <li><a href="team.html">Team Profiles</a></li>
-            <li><a href="certificates.html">Certifications</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#services">Services</a>
-          <ul>
-            <li><a href="traning.html">Training Programs</a></li>
-            <li><a href="groupclass.html">Group Classes</a></li>
-            <li><a href="personal.html">Personal Training</a></li>
-          </ul>
-        </li>
-        <li>
-          <a href="#membership">Membership</a>
-          <ul>
-            <li><a href="pricing.html">Pricing</a></li>
-            <li><a href="plans.html">Plans</a></li>
-            <li><a href="benigits.html">Benefits</a></li>
-          </ul>
-        </li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
+      <div class="nav-links" id="navLinks">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li>
+            <a href="#about">About Us</a>
+            <ul>
+              <li><a href="history.html">Gym History</a></li>
+              <li><a href="team.html">Team Profiles</a></li>
+              <li><a href="certificates.html">Certifications</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#services">Services</a>
+            <ul>
+              <li><a href="traning.html">Training Programs</a></li>
+              <li><a href="groupclass.html">Group Classes</a></li>
+              <li><a href="personal.html">Personal Training</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="#membership">Membership</a>
+            <ul>
+              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="plans.html">Plans</a></li>
+              <li><a href="benigits.html">Benefits</a></li>
+            </ul>
+          </li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
     </nav>
 
     <div class="container">
       <div class="text">
         <h1><b>FITNESS CLUB</b></h1>
-        <p id="slideshowText">
+        <p>
           Welcome to Haleema Fitness Club, where your fitness journey begins!
+          We are committed to helping you achieve your health and wellness goals
+          in a supportive and energizing environment. Whether you're a beginner
+          looking to start a healthier lifestyle or a seasoned athlete seeking
+          to push your limits, our state-of-the-art equipment, diverse classes,
+          and certified trainers are here to guide you every step of the way.
         </p>
         <a href="f.html">
           <button>Join Now</button>
@@ -335,7 +360,11 @@
       <div class="footer-container">
         <div class="footer-column">
           <h3>About Gym Name</h3>
-          <p>Your fitness journey begins here! We are dedicated to helping you achieve your goals with our expert training programs and world-class facilities.</p>
+          <p>
+            Your fitness journey begins here! We are dedicated to helping you
+            achieve your goals with our expert training programs and world-class
+            facilities.
+          </p>
         </div>
         <div class="footer-column">
           <h3>Quick Links</h3>
@@ -369,29 +398,9 @@
 
     <script>
       function toggleMenu() {
-        const navUl = document.querySelector("nav ul");
-        navUl.classList.toggle("active");
+        const navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("active");
       }
-
-      // Slideshow functionality
-      const messages = [
-        "Welcome to Haleema Fitness Club, where your fitness journey begins!",
-        "Push your limits with our certified trainers.",
-        "Join our group classes for motivation and fun!",
-        "Transform your life—one workout at a time!",
-        "Health is wealth—start your journey today!"
-      ];
-
-      let index = 0;
-      setInterval(() => {
-        const textEl = document.getElementById("slideshowText");
-        textEl.style.opacity = 0;
-        setTimeout(() => {
-          textEl.textContent = messages[index];
-          textEl.style.opacity = 1;
-          index = (index + 1) % messages.length;
-        }, 500);
-      }, 4000);
     </script>
   </body>
 </html>
