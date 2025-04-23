@@ -26,6 +26,9 @@
       }
 
       nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -133,6 +136,8 @@
         font-size: 1rem;
         color: rgb(83, 80, 80);
         margin-bottom: 1.5rem;
+        min-height: 80px;
+        transition: opacity 0.5s;
       }
 
       .container button {
@@ -154,10 +159,17 @@
         max-width: 100%;
         border-radius: 10px;
         margin-top: 5px;
+        animation: float 3s ease-in-out infinite;
       }
 
       .image img {
         margin-left: 25%;
+      }
+
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
       }
 
       footer {
@@ -271,8 +283,7 @@
   <body>
     <nav>
       <div class="logo">
-        <img src="fitness club.webp" alt="" /><span>Haleema</span> fitness
-        <span>club</span>
+        <img src="fitness club.webp" alt="" /><span>Haleema</span> fitness <span>club</span>
       </div>
       <button class="menu-toggle" onclick="toggleMenu()">☰</button>
       <ul>
@@ -308,13 +319,8 @@
     <div class="container">
       <div class="text">
         <h1><b>FITNESS CLUB</b></h1>
-        <p>
+        <p id="slideshowText">
           Welcome to Haleema Fitness Club, where your fitness journey begins!
-          We are committed to helping you achieve your health and wellness goals
-          in a supportive and energizing environment. Whether you're a beginner
-          looking to start a healthier lifestyle or a seasoned athlete seeking
-          to push your limits, our state-of-the-art equipment, diverse classes,
-          and certified trainers are here to guide you every step of the way.
         </p>
         <a href="f.html">
           <button>Join Now</button>
@@ -329,11 +335,7 @@
       <div class="footer-container">
         <div class="footer-column">
           <h3>About Gym Name</h3>
-          <p>
-            Your fitness journey begins here! We are dedicated to helping you
-            achieve your goals with our expert training programs and world-class
-            facilities.
-          </p>
+          <p>Your fitness journey begins here! We are dedicated to helping you achieve your goals with our expert training programs and world-class facilities.</p>
         </div>
         <div class="footer-column">
           <h3>Quick Links</h3>
@@ -370,6 +372,26 @@
         const navUl = document.querySelector("nav ul");
         navUl.classList.toggle("active");
       }
+
+      // Slideshow functionality
+      const messages = [
+        "Welcome to Haleema Fitness Club, where your fitness journey begins!",
+        "Push your limits with our certified trainers.",
+        "Join our group classes for motivation and fun!",
+        "Transform your life—one workout at a time!",
+        "Health is wealth—start your journey today!"
+      ];
+
+      let index = 0;
+      setInterval(() => {
+        const textEl = document.getElementById("slideshowText");
+        textEl.style.opacity = 0;
+        setTimeout(() => {
+          textEl.textContent = messages[index];
+          textEl.style.opacity = 1;
+          index = (index + 1) % messages.length;
+        }, 500);
+      }, 4000);
     </script>
   </body>
 </html>
